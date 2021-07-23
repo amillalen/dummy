@@ -7,7 +7,7 @@ function queue_task_run_once(){
   jobexecdate=$2
   jobcount=$(atq -q i|wc -l)
   now=$(date '+%Y%m%d%H%M%S')
-  if [ "$jobcount" == "0" ] && [ "$now" -ge  "$jobexecdate"]; then
+  if [[ "$jobcount" == "0"  && "$now" -ge  "$jobexecdate" ]]; then
     at -q i -f $jobscript -t $jobexecdate
   fi
 }
