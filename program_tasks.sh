@@ -12,5 +12,5 @@ function clear_task_queue(){
    atq -q i|while read line;do jobn=$(echo "$line"|cut -d' ' -f1); echo "remove job $jobn"; atrm $jobn;done
 }
 
-queue_task_run_once()
+queue_task_run_once
 
