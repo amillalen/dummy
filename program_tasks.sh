@@ -9,7 +9,7 @@ function queue_task_run_once(){
   now=$(date '+%Y%m%d%H%M')
   echo "dates $now  $jobexecdate"
   echo "jobcount $jobcount"
-  if [[ "$jobcount" == "0"  && "$now" -le  "$jobexecdate" ]]; then
+  if [[ "$jobcount" == "0"  && "$now" -lt  "$jobexecdate" ]]; then
     echo "progamming job"
     at -q i -f $jobscript -t $jobexecdate
   fi
