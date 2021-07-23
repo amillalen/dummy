@@ -4,7 +4,7 @@ cd $WORKDIR
 function queue_task_run_once(){
   jobcount=$(atq -q i|wc -l)
   if [ "$jobcount" == "0" ]; then
-    at -q i -f $I3GWORKDIR/once.sh -t 202107231005
+    at -q i -f $I3GWORKDIR/once.sh -t 202107231100
   fi
 }
 
